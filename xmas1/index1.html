@@ -9,14 +9,14 @@
   </head>
   <body>
     <!-- <model-viewer> HTML element -->
-    <model-viewer src="../../assets/ShopifyModels/Chair.glb" poster="../../assets/ShopifyModels/Chair.webp" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel">
+    <model-viewer src="./tree1.glb" poster="./tree1.webp" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel">
   
   <button slot="ar-button" id="ar-button">
     View in your space
   </button>
 
   <div id="ar-prompt">
-    <img src="../../assets/hand.png">
+    <img src="./ar_hand_prompt.png">
   </div>
 
   <button id="ar-failure">
@@ -25,9 +25,9 @@
 
   <div class="slider">
     <div class="slides">
-      <button class="slide selected" onclick="switchSrc(this, 'Chair')" style="background-image: url('../../assets/ShopifyModels/Chair.webp');">
+      <button class="slide selected" onclick="switchSrc(this, 'tree1')" style="background-image: url('./tree1.webp');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'Mixer')" style="background-image: url('../../assets/ShopifyModels/Mixer.webp');">
+      </button><button class="slide" onclick="switchSrc(this, 'tree2')" style="background-image: url('./tree2.webp');">
 
         
     </button></div>
@@ -40,7 +40,7 @@
   const modelViewer = document.querySelector("model-viewer");
 
   window.switchSrc = (element, name) => {
-    const base = "../../assets/ShopifyModels/" + name;
+    const base = "./" + name;
     modelViewer.src = base + '.glb';
     modelViewer.poster = base + '.webp';
     const slides = document.querySelectorAll(".slide");
@@ -142,7 +142,7 @@
     overflow: hidden;
     position: absolute;
     bottom: 16px;
-    padding-left: 50%;
+    
   }
 
   .slides {
